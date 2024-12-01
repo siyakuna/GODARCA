@@ -2,10 +2,13 @@
     <title>GODARCA-流刑家班</title>
     <meta property="og:title" content="GODARCA-流刑家班" />
 <meta property="og:description" content="みんなの最後" />
-    <style>
+   <style>
+    body{
+        margin: 0;
+    }
     img{
         height: 95px;
-        left: 10%;
+        right: 10px;
         position: absolute;
     }
     body>div{
@@ -20,7 +23,7 @@
         }
         #rust-serif{
             overflow: hidden;
-            min-height: 500px;
+            min-height: 700px;
         }
         #rust-serif>div>div>p{
             text-shadow: 0 0 10px #000000;
@@ -37,11 +40,38 @@
     margin: auto;
     position: absolute;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.65;
         }
-                img[src="file:///blank.gif.png"]{
-            display: none;
-        }
+ @keyframes scroll-anim {
+  from {
+    opacity: 0;
+    transform:translateX(100px);
+    
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scroll-anim-even {
+  from {
+    opacity: 0;
+    transform:translateX(-100px);
+    
+  }
+  to {
+    opacity: 1;
+  }
+}
+#rust-serif:nth-child(odd) {
+    animation: scroll-anim cubic-bezier(0.88, -0.01, 1, 1);
+    animation-timeline: view();
+    animation-range: entry 0% contain 10%;
+}
+#rust-serif:nth-child(even) {
+    animation: scroll-anim-even cubic-bezier(0.88, -0.01, 1, 1);
+    animation-timeline: view();
+    animation-range: entry 0% contain 10%;
+}
 </style>
 
 
